@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import url("https://fonts.googleapis.com/css2?family=Kolker+Brush");
+
+header,
+footer {
+  text-align: center;
+}
+body {
+  background-color: gray;
+  color: #333;
+
+  font-size: 14px;
+}
+h1 {
+  color: blue;
+  font-size: 2rem;
+  font-family: "Kolker Brush", serif;
+}
+
+h2 {
+  color: green;
+  font-size: 1.6rem;
+  margin: 0;
+  font-family: "Tangerine", serif;
+}
+
+p,
+em {
+  color: gray;
+  margin: 0.5em 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+ol {
+  border: 2px solid purple;
+}
+
+ul {
+  border: 2px solid orange;
+}
+ol,
+ul {
+  padding: 5px 20px;
+  border-radius: 4px;
+}
+b {
+  color: red;
+  margin: 0.5em 0;
+}
+strong {
+  color: pink;
+  margin: 0.5em 0;
+}
+@media screen and (max-width: 640px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heady"
+      "mainy"
+      "aside1"
+      "aside2"
+      "navvy"
+      "footy";
+  }
+  nav ul {
+    flex-flow: column nowrap;
+    text-align: center;
+  }
+  nav ul li a {
+    display: block;
+    padding: 10px 5px;
+    margin: 5px;
+    border: 1px black solid;
+    background: white;
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: beige;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "heade  heade  heade"
+    "navb   navb   navb"
+    "aside1 mainy  aside2"
+    "aside1 mainy  aside2"
+    "aside1 mainy  aside2"
+    "footy  footy  footy"
+    "footy  footy  footy";
+}
+header {
+  grid-area: heade;
+  background: #dba67f;
+}
+nav {
+  grid-area: navb;
+  background: #4095db;
+}
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+main {
+  grid-area: mainy;
+  background: #fafacd;
+  max-height: 100%;
+}
+#aside1 {
+  grid-area: aside1;
+  background: #acffa4;
+}
+#aside2 {
+  grid-area: aside2;
+  background: #9da4db;
+}
+footer {
+  grid-area: footy;
+  background: rgb(171, 171, 171);
+}
